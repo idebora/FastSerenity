@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <serenity.version>2.3.2</serenity.version>
+        <serenity.version>2.4.2</serenity.version>
     </properties>
 
     <repositories>
@@ -59,6 +59,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>1.5.10</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
