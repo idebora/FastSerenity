@@ -7,7 +7,7 @@ import utils.Constants;
 public class LoginTest extends BaseTest {
 
     @Test
-    public void loginWithValidData(){
+    public void loginWithValidDataTest() {
         loginSteps.navigateToLoginPage();
         loginSteps.typeUserEmail(Constants.USER_EMAIL);
         loginSteps.typePassword(Constants.USER_PASS);

@@ -1,12 +1,10 @@
 package org.fasttrackit.qa4.steps;
 
-
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import utils.Messages;
 
 public class CheckoutSteps extends BaseSteps {
-
 
     @Step
     public void navigateToCheckoutPage() {
@@ -27,6 +25,7 @@ public class CheckoutSteps extends BaseSteps {
     public void typeCompanyName(String company) {
         checkoutPage.setCompanyBillingField(company);
     }
+
     @Step
     public void selectCountryName(String value) {
         checkoutPage.selectCountryDropDownValues(value);
@@ -56,16 +55,15 @@ public class CheckoutSteps extends BaseSteps {
     public void typePhoneBilling(String phone) {
         checkoutPage.setPhoneBillingField(phone);
     }
+
     @Step
     public void typeEmailBilling(String email) {
         checkoutPage.setEmailBillingField(email);
     }
 
     @Step
-//    public void placeOrder() throws InterruptedException {
     public void placeOrder() {
         checkoutPage.clickOnOrderButton();
-
     }
 
     @Step

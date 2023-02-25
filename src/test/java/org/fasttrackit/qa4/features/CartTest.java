@@ -2,26 +2,23 @@ package org.fasttrackit.qa4.features;
 
 import org.junit.Test;
 
-public class CartTest extends BaseTest{
+public class CartTest extends BaseTest {
 
     @Test
-    public void AddProductToCart(){
+    public void addProductToCartTest() {
+        int index = 0;
         productSteps.navigateToShopPage();
-        String productName = productSteps.getFirstSimpleProductName();
-        productSteps.addSimpleProduct();
+        String expected = productSteps.addSimpleProduct(index);
         cartSteps.navigateToCartPage();
-        cartSteps.verifyAddedProduct(productName);
+        cartSteps.verifyAddedProduct(index, expected);
     }
 
     @Test
-    public void modifyQuantityForAProductFromCart(){
+    public void modifyQuantityForAProductFromCartTest() {
         int index = 0;
         productSteps.navigateToShopPage();
-        productSteps.addSimpleProduct();
+        productSteps.addSimpleProduct(index);
         cartSteps.navigateToCartPage();
-        float firstQtyValue = cartSteps.getPrice(index);
-        int qty = cartSteps.modifyQuantityForOneProduct(index);
-        float lastQtyValue = cartSteps.getPrice(index);
-        cartSteps.verifyQty(firstQtyValue,lastQtyValue,qty);
+        cartSteps.verifyPriceAfterChange(index);
     }
 }

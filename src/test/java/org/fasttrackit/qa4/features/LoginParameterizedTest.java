@@ -24,17 +24,17 @@ public class LoginParameterizedTest extends BaseTest {
 
     @TestData(columnNames = "Email, Password, ErrorMessage")
     public static Collection<Object[]> testData() {
-        return Arrays.asList(new Object[][] {
-            { "",         "",              "Username is required."},
-            { "",          "12abb",        "Username is required."},
-            { "eli.",      "",             "The password field is empty."},
-            { "@mail.com", "1212",         "Invalid username. Lost your password?"}
+        return Arrays.asList(new Object[][]{
+                {"", "", "Username is required."},
+                {"", "12abb", "Username is required."},
+                {"eli.", "", "The password field is empty."},
+                {"@mail.com", "1212", "Invalid username. Lost your password?"}
         });
     }
 
 
     @Test
-    public void loginWithInvalidData() {
+    public void loginWithInvalidDataTest() {
         loginSteps.navigateToLoginPage();
         loginSteps.typeUserEmail(email);
         loginSteps.typePassword(password);

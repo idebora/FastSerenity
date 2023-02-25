@@ -2,12 +2,13 @@ package org.fasttrackit.qa4.features;
 
 import org.junit.Test;
 
-public class CheckoutTest extends BaseTest{
+public class CheckoutTest extends BaseTest {
 
     @Test
-    public void checkoutWithValidData() {
+    public void checkoutWithValidDataTest() {
         productSteps.navigateToShopPage();
-        productSteps.addSimpleProduct();
+        productSteps.addSimpleProduct(0);
+
         checkoutsteps.navigateToCheckoutPage();
         checkoutsteps.typeFirstName("Elisa");
         checkoutsteps.typeLastName("Duma");

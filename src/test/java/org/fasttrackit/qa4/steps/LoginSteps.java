@@ -4,12 +4,12 @@ import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import utils.Constants;
 
-public class LoginSteps extends BaseSteps{
+public class LoginSteps extends BaseSteps {
 
-   @Step
-   public void navigateToLoginPage() {
-       homePage.clickOnAccountLink();
-   }
+    @Step
+    public void navigateToLoginPage() {
+        homePage.clickOnAccountLink();
+    }
 
     @Step
     public void typeUserEmail(String email) {
@@ -18,19 +18,18 @@ public class LoginSteps extends BaseSteps{
 
     @Step
     public void typePassword(String password) {
-       loginPage.setPasswordField(password);
+        loginPage.setPasswordField(password);
     }
 
     @Step
     public void clickLogin() {
-       loginPage.clickLoginButton();
+        loginPage.clickLoginButton();
     }
+
     @Step
-    public void userIsLoggedInSuccessful(){
-
-       accountPage.userIsLoggedIn(Constants.USER_NAME);
+    public void userIsLoggedInSuccessful() {
+        accountPage.userIsLoggedIn(Constants.USER_NAME);
     }
-
 
     @Step
     public void checkErrorMessage(String errorMessage) {

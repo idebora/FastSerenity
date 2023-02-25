@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import utils.Constants;
 
+import java.time.Instant;
+
 @RunWith(SerenityRunner.class)
 public class BaseTest {
 
@@ -26,10 +28,24 @@ public class BaseTest {
     @Steps
     protected CheckoutSteps checkoutsteps;
 
+    @Steps
+    protected BlogSteps blogSteps;
+
+    @Steps
+    protected AdminSteps adminSteps;
+
     @Before
-    public void initTests(){
+    public void initTests() {
         driver.manage().window().maximize();
         driver.get(Constants.BASE_URL);
+    }
+
+    public long getTimestamp() {
+        return Instant.now().getEpochSecond();
+    }
+
+    public String getGUID() {
+        return String.valueOf(java.util.UUID.randomUUID());
     }
 
 }
